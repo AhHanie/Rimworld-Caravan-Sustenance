@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Caravan Sustenance</name>
+    <author>Sk</author>
+    <packageId>sk.caravansustenance</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>Lets a player caravan hunt wild animals from its current tile while traveling. Needs at least one eligible hunter and one eligible cook traveling in the caravan. Hunting happens in the background with no player intervention. Hunting slightly slows the caravan while active. Yield and the movement speed penalty are both configurable in the mod settings.</description>
+    <modVersion>1.0.0</modVersion>
+    <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3804042037</url>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+        </li>
+    </modDependencies>
+</ModMetaData>

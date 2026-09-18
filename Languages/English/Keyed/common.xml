@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <CaravanSustenance.LoadingLabel>Caravan Sustenance Loading</CaravanSustenance.LoadingLabel>
+    <CaravanSustenance.SettingsTitle>Caravan Sustenance</CaravanSustenance.SettingsTitle>
+
+    <CaravanSustenance.Settings.YieldMultiplier>Hunting yield multiplier: {0}</CaravanSustenance.Settings.YieldMultiplier>
+    <CaravanSustenance.Settings.SpeedPenalty>Hunting movement speed penalty: {0}</CaravanSustenance.Settings.SpeedPenalty>
+    <CaravanSustenance.Settings.LargeGameCurveExponent>Large game time curve: {0} (1.00 = scales directly with size, lower = big animals take proportionally less extra time)</CaravanSustenance.Settings.LargeGameCurveExponent>
+    <CaravanSustenance.Settings.ResetDefaults>Reset to defaults</CaravanSustenance.Settings.ResetDefaults>
+
+    <CaravanSustenance.Gizmo.Label>Hunt while traveling</CaravanSustenance.Gizmo.Label>
+    <CaravanSustenance.Gizmo.Desc>Toggle whether this caravan hunts wild animals from the current tile while traveling. Requires at least one eligible hunter and one eligible cook. Meat is butchered and cooked in the background; other butcher products are added to the caravan's inventory.</CaravanSustenance.Gizmo.Desc>
+
+    <CaravanSustenance.Reason.NotPlayerControlled>This caravan is not player-controlled.</CaravanSustenance.Reason.NotPlayerControlled>
+    <CaravanSustenance.Reason.NoHunter>No eligible hunter. A hunter needs an enabled Shooting skill, no disabled Hunting work or Violent work tag, and a usable ranged weapon (or, for a controlled mech, a usable ranged attack).</CaravanSustenance.Reason.NoHunter>
+    <CaravanSustenance.Reason.NoCook>No eligible cook. A cook needs an enabled Cooking skill and no disabled Cooking work.</CaravanSustenance.Reason.NoCook>
+    <CaravanSustenance.Reason.NightResting>The caravan is resting for the night.</CaravanSustenance.Reason.NightResting>
+    <CaravanSustenance.Reason.NoWildlife>No huntable wildlife on this tile right now.</CaravanSustenance.Reason.NoWildlife>
+    <CaravanSustenance.Reason.NoCargoSpace>Not enough free cargo capacity for the next harvest.</CaravanSustenance.Reason.NoCargoSpace>
+
+    <CaravanSustenance.Tooltip.Paused>Paused: {0}</CaravanSustenance.Tooltip.Paused>
+    <CaravanSustenance.Tooltip.Hunters>Eligible hunters: {0}</CaravanSustenance.Tooltip.Hunters>
+    <CaravanSustenance.Tooltip.Cook>Cook: {0}</CaravanSustenance.Tooltip.Cook>
+    <CaravanSustenance.Tooltip.Prey>Current prey: {0}</CaravanSustenance.Tooltip.Prey>
+    <CaravanSustenance.Tooltip.Rate>Hunting nutrition per day: {0}</CaravanSustenance.Tooltip.Rate>
+    <CaravanSustenance.Tooltip.StationaryBonus>Bonus while stationary: {0}</CaravanSustenance.Tooltip.StationaryBonus>
+    <CaravanSustenance.Tooltip.YieldMultiplier>Yield multiplier: {0}</CaravanSustenance.Tooltip.YieldMultiplier>
+    <CaravanSustenance.Tooltip.SpeedPenalty>Movement speed penalty while hunting: {0}</CaravanSustenance.Tooltip.SpeedPenalty>
+    <CaravanSustenance.Tooltip.SpeedPenaltyExplanation>Hunting movement speed penalty: {0}</CaravanSustenance.Tooltip.SpeedPenaltyExplanation>
+    <CaravanSustenance.Tooltip.FinalSpeed>Final speed while hunting: {0} tiles / day</CaravanSustenance.Tooltip.FinalSpeed>
+</LanguageData>
