@@ -7,7 +7,7 @@
         <li>1.6</li>
     </supportedVersions>
     <description>Lets a player caravan hunt wild animals from its current tile while traveling. Needs at least one eligible hunter and one eligible cook traveling in the caravan. Hunting happens in the background with no player intervention. Hunting slightly slows the caravan while active. Yield and the movement speed penalty are both configurable in the mod settings.</description>
-    <modVersion>1.0.0</modVersion>
+    <modVersion>1.0.1</modVersion>
     <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3804042037</url>
     <modDependencies>
         <li>

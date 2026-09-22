@@ -21,6 +21,7 @@ namespace Caravan_Sustenance
         public float EstimatedHarvestMass;
     }
 
+    [StaticConstructorOnStartup]
     public static class CaravanHuntingUtility
     {
         private const int UpdateIntervalTicks = 15;
