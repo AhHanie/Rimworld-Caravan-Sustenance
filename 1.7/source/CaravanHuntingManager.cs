@@ -4,12 +4,26 @@ using Verse;
 
 namespace Caravan_Sustenance
 {
+    // Per-caravan state for both activities: hunting (the unprefixed fields) and fishing (the
+    // fishing* / pendingFish* fields).
     public class CaravanHuntingState : IExposable
     {
         public bool enabledByPlayer;
         public float nutritionCredit;
         public string pendingPreyDefName;
         public int pendingTile = -1;
+
+        public bool fishingEnabledByPlayer;
+        public float fishingCredit;
+        public string pendingFishDefName;
+
+        // Not saved: fish pool and fisher scan caches. The default fisher tick forces a rescan
+        // on first use after load.
+        public int cachedPoolTile = -1;
+        public FishPool cachedPool;
+        public int cachedFishersTick = -99999;
+        public List<Pawn> cachedFishers = new List<Pawn>();
+        public List<float> cachedFisherContributions = new List<float>();
 
         // Not saved: only throttles debug logging, so a default of 0 after load is fine.
         public int lastDebugLogTick = -1;
@@ -20,6 +34,9 @@ namespace Caravan_Sustenance
             Scribe_Values.Look(ref nutritionCredit, "nutritionCredit", 0f);
             Scribe_Values.Look(ref pendingPreyDefName, "pendingPreyDefName");
             Scribe_Values.Look(ref pendingTile, "pendingTile", -1);
+            Scribe_Values.Look(ref fishingEnabledByPlayer, "fishingEnabledByPlayer", false);
+            Scribe_Values.Look(ref fishingCredit, "fishingCredit", 0f);
+            Scribe_Values.Look(ref pendingFishDefName, "pendingFishDefName");
         }
     }
 

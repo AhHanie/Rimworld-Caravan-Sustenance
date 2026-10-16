@@ -16,6 +16,7 @@ namespace Caravan_Sustenance
         private static void Postfix(int delta, Caravan ___caravan)
         {
             CaravanHuntingUtility.ProcessTickInterval(___caravan, delta);
+            CaravanFishingUtility.ProcessTickInterval(___caravan, delta);
         }
     }
 
@@ -30,8 +31,18 @@ namespace Caravan_Sustenance
         [HarmonyInfix(typeof(Caravan_ForageTracker), nameof(Caravan_ForageTracker.GetGizmos))]
         private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Caravan ___caravan)
         {
+            IEnumerable<Gizmo> result = __result;
             Gizmo huntGizmo = CaravanHuntingUtility.GetGizmo(___caravan);
-            return huntGizmo == null ? __result : __result.Append(huntGizmo);
+            if (huntGizmo != null)
+            {
+                result = result.Append(huntGizmo);
+            }
+            Gizmo fishGizmo = CaravanFishingUtility.GetGizmo(___caravan);
+            if (fishGizmo != null)
+            {
+                result = result.Append(fishGizmo);
+            }
+            return result;
         }
     }
 

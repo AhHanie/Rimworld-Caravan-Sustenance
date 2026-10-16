@@ -4,6 +4,7 @@
     <CaravanSustenance.SettingsTitle>Caravan Sustenance</CaravanSustenance.SettingsTitle>
 
     <CaravanSustenance.Settings.YieldMultiplier>Hunting yield multiplier: {0}</CaravanSustenance.Settings.YieldMultiplier>
+    <CaravanSustenance.Settings.FishingYieldMultiplier>Fishing yield multiplier: {0}</CaravanSustenance.Settings.FishingYieldMultiplier>
     <CaravanSustenance.Settings.SpeedPenalty>Hunting movement speed penalty: {0}</CaravanSustenance.Settings.SpeedPenalty>
     <CaravanSustenance.Settings.LargeGameCurveExponent>Large game time curve: {0} (1.00 = scales directly with size, lower = big animals take proportionally less extra time)</CaravanSustenance.Settings.LargeGameCurveExponent>
     <CaravanSustenance.Settings.ResetDefaults>Reset to defaults</CaravanSustenance.Settings.ResetDefaults>
@@ -28,4 +29,21 @@
     <CaravanSustenance.Tooltip.SpeedPenalty>Movement speed penalty while hunting: {0}</CaravanSustenance.Tooltip.SpeedPenalty>
     <CaravanSustenance.Tooltip.SpeedPenaltyExplanation>Hunting movement speed penalty: {0}</CaravanSustenance.Tooltip.SpeedPenaltyExplanation>
     <CaravanSustenance.Tooltip.FinalSpeed>Final speed while hunting: {0} tiles / day</CaravanSustenance.Tooltip.FinalSpeed>
+
+    <CaravanSustenance.Fishing.Gizmo.Label>Fish while sailing</CaravanSustenance.Fishing.Gizmo.Label>
+    <CaravanSustenance.Fishing.Gizmo.Desc>Toggle whether this caravan fishes while on a lake or ocean tile, for example aboard a ship. Requires at least one eligible fisher. Fish go straight into the caravan's inventory.</CaravanSustenance.Fishing.Gizmo.Desc>
+
+    <CaravanSustenance.Fishing.Reason.NotOnWater>The caravan is not on a lake or ocean tile.</CaravanSustenance.Fishing.Reason.NotOnWater>
+    <CaravanSustenance.Fishing.Reason.NoFisher>No eligible fisher aboard. A fisher needs an enabled Animals skill, no disabled Fishing work, and working hands.</CaravanSustenance.Fishing.Reason.NoFisher>
+    <CaravanSustenance.Fishing.Reason.NoFish>No fish to catch here.</CaravanSustenance.Fishing.Reason.NoFish>
+    <CaravanSustenance.Fishing.Reason.NoCargoSpace>Not enough free cargo capacity for the next catch.</CaravanSustenance.Fishing.Reason.NoCargoSpace>
+
+    <CaravanSustenance.Fishing.Tooltip.Fishers>Eligible fishers: {0}</CaravanSustenance.Fishing.Tooltip.Fishers>
+    <CaravanSustenance.Fishing.Tooltip.Catch>Current catch: {0}</CaravanSustenance.Fishing.Tooltip.Catch>
+    <CaravanSustenance.Fishing.Tooltip.CatchPending>chosen on the next catch</CaravanSustenance.Fishing.Tooltip.CatchPending>
+    <CaravanSustenance.Fishing.Tooltip.Rate>Fishing nutrition per day: {0}</CaravanSustenance.Fishing.Tooltip.Rate>
+    <CaravanSustenance.Fishing.Tooltip.Water>Water: {0}</CaravanSustenance.Fishing.Tooltip.Water>
+    <CaravanSustenance.Fishing.Tooltip.Rot>Fish are caught raw and rot in 2 days.</CaravanSustenance.Fishing.Tooltip.Rot>
+    <CaravanSustenance.Fishing.Water.Salt>saltwater</CaravanSustenance.Fishing.Water.Salt>
+    <CaravanSustenance.Fishing.Water.Fresh>freshwater</CaravanSustenance.Fishing.Water.Fresh>
 </LanguageData>

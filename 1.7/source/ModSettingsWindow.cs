@@ -27,6 +27,16 @@ namespace Caravan_Sustenance
 
             listing.Gap();
 
+            listing.Label("CaravanSustenance.Settings.FishingYieldMultiplier".Translate(settings.fishingYieldMultiplier.ToStringPercent()));
+            float newFishingYield = listing.Slider(settings.fishingYieldMultiplier, MinYieldMultiplier, MaxYieldMultiplier);
+            if (!Mathf.Approximately(newFishingYield, settings.fishingYieldMultiplier))
+            {
+                settings.fishingYieldMultiplier = newFishingYield;
+                settings.Write();
+            }
+
+            listing.Gap();
+
             listing.Label("CaravanSustenance.Settings.SpeedPenalty".Translate(settings.huntingSpeedPenalty.ToStringPercent()));
             float newPenalty = listing.Slider(settings.huntingSpeedPenalty, MinSpeedPenalty, MaxSpeedPenalty);
             if (!Mathf.Approximately(newPenalty, settings.huntingSpeedPenalty))
@@ -50,6 +60,7 @@ namespace Caravan_Sustenance
             if (listing.ButtonText("CaravanSustenance.Settings.ResetDefaults".Translate()))
             {
                 settings.huntingYieldMultiplier = ModSettings.DefaultYieldMultiplier;
+                settings.fishingYieldMultiplier = ModSettings.DefaultFishingYieldMultiplier;
                 settings.huntingSpeedPenalty = ModSettings.DefaultSpeedPenalty;
                 settings.largeGameCurveExponent = ModSettings.DefaultLargeGameCurveExponent;
                 settings.Write();

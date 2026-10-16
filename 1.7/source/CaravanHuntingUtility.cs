@@ -208,7 +208,7 @@ namespace Caravan_Sustenance
                 return status;
             }
 
-            List<Pawn> pawns = caravan.PawnsListForReading;
+            List<Pawn> pawns = CaravanPawnUtility.GetPawns(caravan);
             float sumSkillContribution = 0f;
             for (int i = 0; i < pawns.Count; i++)
             {
@@ -281,7 +281,7 @@ namespace Caravan_Sustenance
             return status;
         }
 
-        private static bool IsActiveCaravanPawn(Pawn p)
+        internal static bool IsActiveCaravanPawn(Pawn p)
         {
             return !p.Downed && !p.InMentalState && !p.CarriedByCaravan();
         }
