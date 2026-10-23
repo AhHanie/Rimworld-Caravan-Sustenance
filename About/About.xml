@@ -8,7 +8,7 @@
         <li>1.7</li>
     </supportedVersions>
     <description>Lets a player caravan hunt wild animals from its current tile while traveling. Needs at least one eligible hunter and one eligible cook traveling in the caravan. Hunting happens in the background with no player intervention. Hunting slightly slows the caravan while active. On RimWorld 1.7 with Odyssey, a caravan on a lake or ocean tile (for example a ship from a vehicle mod) can also fish, using a second toggle. Fish are caught raw and go straight into the caravan inventory. Yield and the movement speed penalty are both configurable in the mod settings.</description>
-    <modVersion>1.2.0</modVersion>
+    <modVersion>1.2.1</modVersion>
     <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3804042037</url>
     <modDependencies>
         <li>
