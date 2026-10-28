@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -58,29 +59,49 @@ namespace Caravan_Sustenance
     [HarmonyPatch(typeof(CaravanTicksPerMoveUtility), nameof(CaravanTicksPerMoveUtility.GetTicksPerMove), new[] { typeof(Caravan), typeof(StringBuilder) })]
     internal static class Patch_CaravanTicksPerMoveUtility_GetTicksPerMove
     {
+        // Hunting status reads Caravan.NightResting, which other mods may patch to re-enter the speed lookup.
+        [ThreadStatic]
+        private static bool inSpeedPostfix;
+
         [HarmonyInfix(typeof(CaravanTicksPerMoveUtility), nameof(CaravanTicksPerMoveUtility.GetTicksPerMove), typeof(CaravanTicksPerMoveUtility.CaravanInfo), typeof(StringBuilder))]
         private static int Postfix(int __result, StringBuilder explanation, [HarmonyOuter] Caravan caravan)
         {
-            HuntingStatus status = CaravanHuntingUtility.GetStatus(caravan);
-            if (!status.CanActivelyHunt)
+            if (inSpeedPostfix)
             {
                 return __result;
             }
-            float penalty = Mathf.Clamp(Mod.Settings.huntingSpeedPenalty, 0f, 0.95f);
-            if (penalty <= 0f)
+            inSpeedPostfix = true;
+            try
             {
-                return __result;
+                if (caravan == null)
+                {
+                    return __result;
+                }
+                float penalty = Mathf.Clamp(Mod.Settings.huntingSpeedPenalty, 0f, 0.95f);
+                if (penalty <= 0f)
+                {
+                    return __result;
+                }
+                HuntingStatus status = CaravanHuntingUtility.GetStatus(caravan);
+                if (!status.CanActivelyHunt)
+                {
+                    return __result;
+                }
+                int newResult = Mathf.CeilToInt(__result / (1f - penalty));
+                if (explanation != null)
+                {
+                    explanation.AppendLine();
+                    explanation.Append("CaravanSustenance.Tooltip.SpeedPenaltyExplanation".Translate(penalty.ToStringPercent()));
+                    float tilesPerDay = 60000f / newResult;
+                    explanation.AppendLine();
+                    explanation.Append("CaravanSustenance.Tooltip.FinalSpeed".Translate(tilesPerDay.ToString("0.#")));
+                }
+                return newResult;
             }
-            int newResult = Mathf.CeilToInt(__result / (1f - penalty));
-            if (explanation != null)
+            finally
             {
-                explanation.AppendLine();
-                explanation.Append("CaravanSustenance.Tooltip.SpeedPenaltyExplanation".Translate(penalty.ToStringPercent()));
-                float tilesPerDay = 60000f / newResult;
-                explanation.AppendLine();
-                explanation.Append("CaravanSustenance.Tooltip.FinalSpeed".Translate(tilesPerDay.ToString("0.#")));
+                inSpeedPostfix = false;
             }
-            return newResult;
         }
     }
 }
